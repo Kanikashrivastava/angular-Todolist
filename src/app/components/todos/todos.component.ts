@@ -17,6 +17,7 @@ export class TodosComponent implements OnInit {
     this.todoService.getTodos()
     .subscribe(todos => {
       this.todos = todos.slice(0,5);
+      console.log(this.todos)
     });
   }
 
@@ -28,8 +29,8 @@ export class TodosComponent implements OnInit {
   }  
 
   addTodo(todo: Todo) {
-    this.todoService.addTodo(todo).subscribe(todo => {
-      this.todos.push(todo);
+    this.todoService.addTodo(todo).subscribe(data => {
+      this.todos.push({"id":data.id,"title":todo.title,"completed":todo.completed});
     });
   }
 
