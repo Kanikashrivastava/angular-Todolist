@@ -21,7 +21,7 @@ export class AddTodoComponent implements OnInit {
       completed: false
     }
 
-    this.addTodo.emit(todo)
+    this.addTodo.emit(todo);
   }
 
 }
